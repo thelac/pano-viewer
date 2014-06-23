@@ -1,0 +1,29 @@
+<krpano version="1.17">
+  
+  <!-- view settings -->
+  <view hlookat="0" vlookat="0" maxpixelzoom="1.0" fovmax="120" limitview="auto" />
+
+  <preview url="img.tiles/preview.jpg" />
+
+  <image type="CUBE" multires="true" tilesize="256" progressive="true" device="!mobile+!css3d">
+    <level tiledimagewidth="512" tiledimageheight="512" download="view" decode="view">
+      <cube url="img.tiles/l4_%s_%v_%h.jpg" />
+    </level>
+    <level tiledimagewidth="1024" tiledimageheight="1024" download="view" decode="view">
+      <cube url="img.tiles/l3_%s_%v_%h.jpg" />
+    </level>
+    <level tiledimagewidth="2048" tiledimageheight="2048" download="view" decode="view">
+      <cube url="img.tiles/l2_%s_%v_%h.jpg" />
+    </level>
+    <level tiledimagewidth="4096" tiledimageheight="4096" download="view" decode="view">
+      <cube url="img.tiles/l1_%s_%v_%h.jpg" />
+    </level>
+  </image>
+
+  <image type="CUBE" multires="true" tilesize="256" progressive="true" device="mobile|css3d">
+    <level tiledimagewidth="512" tiledimageheight="512" download="view" decode="view">
+      <cube url="img.tiles/l4_%s_%v_%h.jpg" />
+    </level>
+  </image>
+
+</krpano>

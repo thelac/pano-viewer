@@ -17,11 +17,5 @@ npm-debug.log
 
 pids
 logs
-results
-_site
-assets
-clients
-demo
-offline
 node_modules
 dump

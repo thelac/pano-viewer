@@ -1,0 +1,13 @@
+<krpano version="1.17">
+
+  <include url="skin.xml" />
+  
+  <control
+    usercontrol    = 'mouse'
+    mousetype      = 'drag2d'
+    keybspeed      = '1.00'
+    keybaccelerate = '0.20'
+  />
+
+  <view hlookat="0" vlookat="0" maxpixelzoom="1.0" fovmax="120" limitview="auto" />
+</krpano>

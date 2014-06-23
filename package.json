@@ -1,0 +1,18 @@
+{
+  "author": "Daniel Suo",
+  "name": "pano-viewer",
+  "version": "0.0.1",
+  "homepage": "labs.floored.com",
+  "licenses": {
+    "type": "MIT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:floored/pano-viewer.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.8.1",
+    "requirejs": "^2.1.14"
+  }
+}

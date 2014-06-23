@@ -1,14 +1,15 @@
 {
   "author": "Daniel Suo",
-  "name": "pano-viewer",
+  "name": "fallback-viewer",
   "version": "0.0.1",
   "homepage": "labs.floored.com",
   "licenses": {
     "type": "MIT"
   },
+  "main": "src/fallback.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:floored/pano-viewer.git"
+    "url": "git@github.com:floored/fallback-viewer.git"
   },
   "dependencies": {},
   "devDependencies": {

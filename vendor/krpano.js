@@ -4,6 +4,15 @@
 */
 
 define(function() {
+  /*
+    krpano HTML5 Viewer
+    krpano 1.17 (build 2014-04-03)
+  */
+  var krpanoJS = {
+    version: "1.17",
+    build: "2014-04-03"
+  };
+
   return {
     createPanoViewer: function(e) {
       var that = this;

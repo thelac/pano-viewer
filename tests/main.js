@@ -12,5 +12,5 @@ require(['fallback'], function(fallback) {
     //the module value for "helper/util".
 
     console.log(fallback.shouldShow);
-    fallback.show();
+    fallback.show('/tests/streetview', {});
 });

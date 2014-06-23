@@ -1,0 +1,352 @@
+#stairs {
+  border-top: 1px solid rgba(250,250,255,0.2);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 6em;
+  width: 50%;
+}
+#stairs .icon {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: calc(50% - 1em);
+  left: calc(50% - 1.75em);
+}
+#stairs .arrow-1,
+#stairs .arrow-2,
+#stairs .stairs {
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.15s ease, opacity 0.4s ease-out;
+  -moz-transition: -moz-transform 0.15s ease, opacity 0.4s ease-out;
+  -o-transition: -o-transform 0.15s ease, opacity 0.4s ease-out;
+  -ms-transition: -ms-transform 0.15s ease, opacity 0.4s ease-out;
+  transition: transform 0.15s ease, opacity 0.4s ease-out;
+}
+#stairs .arrow-1.animate,
+#stairs .arrow-2.animate,
+#stairs .stairs.animate {
+  -webkit-transition: -webkit-transform 0.6s ease-out, opacity 0.4s ease-out;
+  -moz-transition: -moz-transform 0.6s ease-out, opacity 0.4s ease-out;
+  -o-transition: -o-transform 0.6s ease-out, opacity 0.4s ease-out;
+  -ms-transition: -ms-transform 0.6s ease-out, opacity 0.4s ease-out;
+  transition: transform 0.6s ease-out, opacity 0.4s ease-out;
+}
+#stairs .arrow-1,
+#stairs .arrow-2 {
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("../img/stairs-arrow.svg");
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#stairs .stairs {
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("../img/stairs.svg");
+  top: 0.75em;
+  left: 0.75em;
+  -webkit-backface-visibility: hidden;
+}
+#stairs-toggle {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  -webkit-transition: opacity 0.15s ease;
+  -moz-transition: opacity 0.15s ease;
+  -o-transition: opacity 0.15s ease;
+  -ms-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+#stairs-toggle .arrow-1 {
+  -webkit-transform: rotate(-225deg) translateX(50px);
+  -moz-transform: rotate(-225deg) translateX(50px);
+  -o-transform: rotate(-225deg) translateX(50px);
+  -ms-transform: rotate(-225deg) translateX(50px);
+  transform: rotate(-225deg) translateX(50px);
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+#stairs-toggle:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#stairs-toggle:hover .arrow-2 {
+  -webkit-transform: rotate(-45deg) translateX(4px);
+  -moz-transform: rotate(-45deg) translateX(4px);
+  -o-transform: rotate(-45deg) translateX(4px);
+  -ms-transform: rotate(-45deg) translateX(4px);
+  transform: rotate(-45deg) translateX(4px);
+}
+#stairs-toggle.down .arrow-1 {
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  -o-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#stairs-toggle.down .arrow-2 {
+  -webkit-transform: rotate(-45deg) translateX(50px);
+  -moz-transform: rotate(-45deg) translateX(50px);
+  -o-transform: rotate(-45deg) translateX(50px);
+  -ms-transform: rotate(-45deg) translateX(50px);
+  transform: rotate(-45deg) translateX(50px);
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+#stairs-toggle.down:hover .arrow-1 {
+  -webkit-transform: rotate(-225deg) translateX(4px);
+  -moz-transform: rotate(-225deg) translateX(4px);
+  -o-transform: rotate(-225deg) translateX(4px);
+  -ms-transform: rotate(-225deg) translateX(4px);
+  transform: rotate(-225deg) translateX(4px);
+}
+#stairs-up,
+#stairs-down {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 6em;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  -webkit-background-size: auto 2.1em;
+  -moz-background-size: auto 2.1em;
+  background-size: auto 2.1em;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  -webkit-transition: opacity 0.15s ease;
+  -moz-transition: opacity 0.15s ease;
+  -o-transition: opacity 0.15s ease;
+  -ms-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  cursor: pointer;
+}
+#stairs-up:hover,
+#stairs-down:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#stairs-up.inactive,
+#stairs-down.inactive {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  cursor: default;
+}
+#stairs-down .arrow-1,
+#stairs-down .arrow-2 {
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  -o-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+}
+#up .btn-hint {
+  letter-spacing: 0.15em;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  background-color: #fafafd;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Apercu Regular", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#fallback {
+  width: 100%;
+  height: 100%;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  visibility: hidden;
+  background: #262d3a;
+  width: 250px;
+  height: 100%;
+  cursor: pointer;
+}
+#menu-item-container {
+  height: 85%;
+}
+#menu-button {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 32px;
+  height: 32px;
+  z-index: 99;
+  background-image: url("/build/img/hamburger.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  background-size: auto 100%;
+  cursor: pointer;
+}
+.menu-item {
+  padding: 1em 0 0 2.75em;
+  font-size: 1.5em;
+  letter-spacing: 0.025em;
+  color: #ced0e8;
+  cursor: pointer;
+}
+.menu-item:hover {
+  color: #fff;
+}
+.video {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video.active {
+  display: block;
+}
+#arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 32px;
+  margin-left: -32px;
+  margin-top: -16px;
+  z-index: 99;
+  cursor: pointer;
+  background-image: url("/build/img/arrow-flat.png");
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  color: #808088;
+  text-align: center;
+  font-size: 1.2em;
+  letter-spacing: -0.045em;
+  background: #fff;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
+#overlay a {
+  color: #7270b1;
+}
+#overlay a:hover {
+  color: #ced0e8;
+}
+#overlay-message {
+  width: 60%;
+  margin: 0 20%;
+  position: relative;
+}
+#overlay-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url("/build/img/x-small.png");
+}
+#flashFallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
+#flashFallbackBlock {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background: #efefef;
+  -moz-opacity: 0.85;
+  -khtml-opacity: 0.85;
+  opacity: 0.85;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+  filter: alpha(opacity=85);
+}
+#flashFallbackMassage {
+  top: 50%;
+  left: 50%;
+  margin-top: -512px;
+  margin-left: -512px;
+  width: 1024px;
+  height: 1024px;
+  color: #808088;
+  position: absolute;
+  z-index: 3000;
+  font-size: 1.1em;
+  text-align: center;
+}
+#flashFallbackMassage a {
+  color: #7270b1;
+}
+#flashFallbackMassage a:hover {
+  color: #ced0e8;
+}
+#flashFallbackMassage img {
+  margin-top: 362px;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  border: 0px;
+  border-style: none;
+}

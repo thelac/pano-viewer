@@ -1,6 +1,4 @@
 <krpano version="1.17">
-
-  <include url="skin.xml" />
   
   <control
     usercontrol    = 'mouse'

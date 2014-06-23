@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: '../src',
+  baseUrl: '/',
   paths: {
     'fallback': 'fallback'
   }
@@ -12,4 +12,5 @@ require(['fallback'], function(fallback) {
     //the module value for "helper/util".
 
     console.log(fallback.shouldShow);
+    fallback.show();
 });

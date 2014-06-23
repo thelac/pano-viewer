@@ -1,11 +1,12 @@
 // Sets meta information in document
-FV.setMeta = function () {
+define(function () {
   var head = document.getElementsByTagName('head')[0];
 
   var meta = {};
 
-  meta.viewport = document.getElementsByTagName('meta')[0];
+  meta.viewport = document.createElement('meta');
   meta.viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+  head.appendChild(meta.viewport);
 
   meta.apple_mobile_web_app_capable = document.createElement('meta');
   meta.apple_mobile_web_app_capable.setAttribute('name', 'apple-mobile-web-app-capable');
@@ -21,4 +22,4 @@ FV.setMeta = function () {
   meta.x_ua_compatible.setAttribute('http-equiv', 'x-ua-compatible');
   meta.x_ua_compatible.setAttribute('content', 'IE=edge');
   head.appendChild(meta.x_ua_compatible);
-};
+});

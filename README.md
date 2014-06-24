@@ -26,6 +26,7 @@ index.html
 ```
 main.js
 
+// Assumes library is in root of URL
 require.config({
   baseUrl: '/',
   paths: {

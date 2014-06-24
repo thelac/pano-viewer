@@ -1,5 +1,7 @@
+// Assumes that panoer is deployed to root of folder
+
 require.config({
-  baseUrl: '../',
+  baseUrl: '/',
   paths: {
     'fallback': 'fallback'
   }
@@ -12,5 +14,5 @@ require(['fallback'], function(fallback) {
     //the module value for "helper/util".
 
     console.log(fallback.shouldShow);
-    fallback.show('../tests/streetview', {});
+    fallback.show('/tests/streetview', {});
 });

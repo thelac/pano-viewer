@@ -2,6 +2,11 @@
 
 See the tests folder for example usage.
 
+## Oculus Setup
+- See [here](https://github.com/benvanik/vr.js/tree/master)
+
+## Documentation
+
 ```
 index.html
 

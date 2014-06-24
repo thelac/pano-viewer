@@ -1,4 +1,4 @@
-FV.Menu = function() {
+define(function() {
   var that = this;
   // debugger
   this.visible = false;
@@ -19,39 +19,42 @@ FV.Menu = function() {
   this.body = document.getElementsByTagName('body')[0];
   this.body.appendChild(this.el);
   this.body.appendChild(this.btn);
-};
 
-FV.Menu.prototype.registerElement = function(el, callback) {//when click on el, callback will be called
-  FV.utils.addClickEvent(el, callback);
-};
+  return {
+    registerElement: function(el, callback) { //when click on el, callback will be called
+      FV.utils.addClickEvent(el, callback);
+    },
 
-FV.Menu.prototype.show = function() {
-  this.btn.style.backgroundImage = 'url("/build/img/x.png")';
-  this.el.style.visibility = 'visible';
-  this.visible = true;
-};
-FV.Menu.prototype.hide = function() {
-  this.btn.style.backgroundImage = 'url("/build/img/hamburger.png")';
-  this.el.style.visibility = 'hidden';
-  this.visible = false;
-};
+    show: function() {
+      this.btn.style.backgroundImage = 'url("../assets/img/x.png")';
+      this.el.style.visibility = 'visible';
+      this.visible = true;
+    },
 
-FV.Menu.prototype.addItem = function(name, callback) {
-  var div = document.createElement('div');
-  div.className = 'menu-item';
-  div.innerHTML = name;
+    hide: function() {
+      this.btn.style.backgroundImage = 'url("../assets/img/hamburger.png")';
+      this.el.style.visibility = 'hidden';
+      this.visible = false;
+    },
 
-  var that = this;
-  this.registerElement(div, function(e) {
-    // TODO: clean up this atrocity
-    var iframe = document.getElementsByTagName('iframe')[0];
-    if (iframe !== undefined) {
-      iframe.parentNode.removeChild(iframe);
-    }
-    callback(e);
-    that.hide();
-  });
-  this.container.appendChild(div);
-};
+    addItem: function(name, callback) {
+      var div = document.createElement('div');
+      div.className = 'menu-item';
+      div.innerHTML = name;
 
-FV.Menu.prototype.addButton = function(name, img, callback) {};
+      var that = this;
+      this.registerElement(div, function(e) {
+        // TODO: clean up this atrocity
+        var iframe = document.getElementsByTagName('iframe')[0];
+        if (iframe !== undefined) {
+          iframe.parentNode.removeChild(iframe);
+        }
+        callback(e);
+        that.hide();
+      });
+      this.container.appendChild(div);
+    },
+
+    addButton: function(name, img, callback) {}
+  }
+});

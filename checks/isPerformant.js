@@ -1,4 +1,4 @@
-define([], function() {
+define(function() {
   // TODO: implement shader test here
   return true;
 });

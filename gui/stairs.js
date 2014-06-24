@@ -1,3 +1,5 @@
+// TODO: convert to RequireJS
+
 // var $ = require('jquery');
 // var radio = require('radio');
 FV.Stairs = function() {

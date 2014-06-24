@@ -1,17 +1,16 @@
-FV.Overlay = function() {
+define(['checks/isMobile', 'utils/addClickEvent'], function(isMobile, addClickEvent) {
   this.el = document.createElement('div');
   this.el.id = 'overlay';
 
   this.message = document.createElement('div');
   this.message.id = 'overlay-message';
   var messageText = document.createElement('p');
-  if (config.mobile) {
+  if (isMobile) {
     messageText.innerHTML = 'Tap and drag to look, double tap to move. Tap the left icon for highlights.';
-  } else if (FV.stView){
+  } else {
     messageText.innerHTML = 'Click and drag to look, arrow keys to move. Click the left icon for highlights.<br />To view this space in 3D, please use a browser that supports <a href="http://get.webgl.org" target="_blank">WebGL</a>.';
-  }else if (FV.turntables){
-    messageText.innerHTML = 'Click and drag to look. Click the left icon for highlights.<br />To view this space in 3D, please use a browser that supports <a href="http://get.webgl.org" target="_blank">WebGL</a>.';
   }
+  
   this.message.appendChild(messageText);
   this.el.appendChild(this.message);
 
@@ -19,7 +18,7 @@ FV.Overlay = function() {
   this.close.id = 'overlay-close';
 
   var that = this;
-  FV.utils.addClickEvent(this.close, function(e) {
+  addClickEvent(this.close, function(e) {
     that.el.style.visibility = 'hidden';
   });
 
@@ -27,8 +26,4 @@ FV.Overlay = function() {
 
   this.body = document.getElementsByTagName('body')[0];
   this.body.appendChild(this.el);
-
-  // this.screen = document.createElement('div');
-  // this.screen.id = 'screen';
-  // this.body.appendChild(this.screen);
-};
+});

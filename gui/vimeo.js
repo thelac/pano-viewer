@@ -1,3 +1,5 @@
+// TODO: convert to RequireJS
+
 FV.Vimeo = function(id) {
   this.iframe = document.createElement('iframe');
   this.iframe.src = '//player.vimeo.com/video/' + id + '?color=7270B1';

@@ -213,7 +213,7 @@ body {
   width: 32px;
   height: 32px;
   z-index: 99;
-  background-image: url("/build/img/hamburger.png");
+  background-image: url("../img/hamburger.png");
   background-repeat: no-repeat;
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
@@ -251,7 +251,7 @@ body {
   margin-top: -16px;
   z-index: 99;
   cursor: pointer;
-  background-image: url("/build/img/arrow-flat.png");
+  background-image: url("../img/arrow-flat.png");
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   -moz-opacity: 0.9;
   -khtml-opacity: 0.9;
@@ -295,7 +295,7 @@ body {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  background-image: url("/build/img/x-small.png");
+  background-image: url("../img/x-small.png");
 }
 #flashFallback {
   position: absolute;
@@ -321,7 +321,7 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
   filter: alpha(opacity=85);
 }
-#flashFallbackMassage {
+#flashFallbackMessage {
   top: 50%;
   left: 50%;
   margin-top: -512px;
@@ -334,13 +334,13 @@ body {
   font-size: 1.1em;
   text-align: center;
 }
-#flashFallbackMassage a {
+#flashFallbackMessage a {
   color: #7270b1;
 }
-#flashFallbackMassage a:hover {
+#flashFallbackMessage a:hover {
   color: #ced0e8;
 }
-#flashFallbackMassage img {
+#flashFallbackMessage img {
   margin-top: 362px;
   -moz-opacity: 1;
   -khtml-opacity: 1;

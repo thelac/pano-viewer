@@ -29,7 +29,6 @@ require.config({
 });
 
 require(['fallback'], function(fallback) {
-
     console.log(fallback.shouldShow);
     fallback.show('/tests/streetview', {});
 });
